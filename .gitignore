@@ -69,3 +69,5 @@ jspm_packages
 
 # Config file
 test/models/config.js
+
+.idea
