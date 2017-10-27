@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dashedstripes/zendesk-node-api"
+    "url": "https://github.com/bfunk86/deepblue-zendesk"
   },
   "bugs": {
-    "url": "https://github.com/dashedstripes/zendesk-node-api/issues"
+    "url": "https://github.com/bfunk86/deepblue-zendesk/issues"
   },
   "keywords": [
     "zendesk",
