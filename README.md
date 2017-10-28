@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/dashedstripes/zendesk-node-api.svg?branch=master)](https://travis-ci.org/dashedstripes/zendesk-node-api)
 
 # Zendesk NodeJS API
 A wrapper library for Zendesk using NodeJS
@@ -7,7 +6,7 @@ A wrapper library for Zendesk using NodeJS
 Install the package via npm
 
 ```bash
-$ npm install zendesk-node-api
+$ npm install zendesk-node-wrapper
 ```
 
 Create a new instance of Zendesk passing in your Zendesk URL, email and API token.
@@ -25,7 +24,7 @@ var zendesk = new Zendesk({
 You can also use a OAuth2 authentication to get the token, then you need to create a new instance of Zendesk like this:
 
 ```javascript
-var Zendesk = require('zendesk-node-api');
+var Zendesk = require('zendesk-node-wrapper');
 
 var zendesk = new Zendesk({
   url: YOUR_ZENDESK_URL, // https://example.zendesk.com
@@ -45,6 +44,7 @@ More information about it you can find [here](https://support.zendesk.com/hc/en-
 - ```userFields```
 - ```macros```
 - ```search``` - Only `.list(/* URL params */)` method.
+- ```requests```
 
 I'll be adding more objects, I'm aiming for 100% test coverage so it may take a little time.
 
@@ -52,7 +52,7 @@ I'll be adding more objects, I'm aiming for 100% test coverage so it may take a 
 Return an array of all items in the object
 
 ``` javascript
-zendesk.objects.list(
+zendesk.[objects].list(
   // (Optional) URL params available for each object.
   // https://developer.zendesk.com/rest_api/docs/core/
 ).then(function(result){
@@ -64,7 +64,7 @@ zendesk.objects.list(
 Return an item from an ID
 
 ``` javascript
-zendesk.objects.show(OBJECT_ID).then(function(result){
+zendesk.[objects].show(OBJECT_ID).then(function(result){
     console.log(result);
 });
 ```
@@ -73,7 +73,7 @@ zendesk.objects.show(OBJECT_ID).then(function(result){
 Create an item using keys and values from the [Zendesk documentation](https://developer.zendesk.com/rest_api/docs/core/).
 
 ``` javascript
-zendesk.objects.create({
+zendesk.[objects].create({
     // keys and values from the zendesk docs
     // https://developer.zendesk.com/rest_api/docs/core/
 }).then(function(result){
@@ -85,7 +85,7 @@ zendesk.objects.create({
 Update an item from and ID using keys and values from the [Zendesk documentation](https://developer.zendesk.com/rest_api/docs/core/).
 
 ``` javascript
-zendesk.objects.update(OBJECT_ID, {
+zendesk.[objects].update(OBJECT_ID, {
     // keys and values from the zendesk docs
     // https://developer.zendesk.com/rest_api/docs/core/
 }).then(function(result){
@@ -97,7 +97,7 @@ zendesk.objects.update(OBJECT_ID, {
 Delete an item from ID
 
 ``` javascript
-zendesk.objects.delete(OBJECT_ID).then(function(result){
+zendesk.[objects].delete(OBJECT_ID).then(function(result){
     // result == true
 });
 ```
